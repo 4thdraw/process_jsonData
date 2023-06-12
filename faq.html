@@ -193,7 +193,7 @@
                             ];
             let faqlist = '';
             for(count in faqData){ //2번실행됨 count 0, 1
-                
+                faqlist = ""; //초기화작업
                 for( j in faqData[count].ex){                
                     faqlist +=`<div class="accordion-item">
                                         <h3 class="accordion-header" >
