@@ -148,36 +148,10 @@
 			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
 			  crossorigin="anonymous"></script>
         <script>
-            let count = 0;
-            let faqlist =` <div class="accordion-item">
-                                    <h3 class="accordion-header" >
-                                       <button class="accordion-button" type="button" 
-                                         data-bs-target="#collapse${count}" data-bs-toggle="collapse" 
-                                         >제목타이틀</button>
-                                    </h3>
-                                    <div class="accordion-collapse collapse show" id="collapse${count}" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <strong>내용에 나오는 강조 타이틀</strong>
-                                            서술내용을 삽입한다.
-                                        </div>
-                                    </div>
-                            </div>`
-            count = 1;
-            faqlist +=`<div class="accordion-item">
-                                    <h3 class="accordion-header" >
-                                       <button class="accordion-button collapsed" type="button" 
-                                         data-bs-target="#collapse${count}" data-bs-toggle="collapse" 
-                                         >제목타이틀</button>
-                                    </h3>
-                                    <div class="accordion-collapse collapse" id="collapse${count}" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <strong>내용에 나오는 강조 타이틀</strong>
-                                            서술내용을 삽입한다.
-                                        </div>
-                                    </div>
-                        </div>`
-            count = 2;
-            faqlist +=`<div class="accordion-item">
+            const faqData =  [];
+            let faqlist = '';
+            for(count =0; count < 3; count++){
+                faqlist +=`<div class="accordion-item">
                                     <h3 class="accordion-header" >
                                        <button class="accordion-button collapsed" type="button" 
                                          data-bs-target="#collapse${count}" data-bs-toggle="collapse" 
@@ -190,10 +164,9 @@
                                         </div>
                                     </div>
                         </div>`
-            
+                
+            }             
             $("#accordionExample").html(faqlist); 
-
-
         </script>
     </body>
 </html>
