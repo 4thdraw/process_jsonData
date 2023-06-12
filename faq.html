@@ -148,25 +148,41 @@
 			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
 			  crossorigin="anonymous"></script>
         <script>
-            const faqData =  [];
+            const faqData =  [
+                            {
+                                title : "제목입니다.",
+                                strong : "내용안의 첫 타이틀로 강조글입니다.",
+                                view : "강조글 아래 일반 설명문구나열됩니다."
+                             },
+                             {
+                                title : "두번째제목입니다.",
+                                strong : "2내용안의 첫 타이틀로 강조글입니다.",
+                                view : "2강조글 아래 일반 설명문구나열됩니다."
+                             },
+                             {
+                                title : "세번째제목입니다.",
+                                strong : "3내용안의 첫 타이틀로 강조글입니다.",
+                                view : "3강조글 아래 일반 설명문구나열됩니다."
+                             }
+                            ];
             let faqlist = '';
-            for(count =0; count < 3; count++){
+            for(count in faqData){
                 faqlist +=`<div class="accordion-item">
                                     <h3 class="accordion-header" >
                                        <button class="accordion-button collapsed" type="button" 
                                          data-bs-target="#collapse${count}" data-bs-toggle="collapse" 
-                                         >제목타이틀</button>
+                                         >${faqData[count].title}</button>
                                     </h3>
-                                    <div class="accordion-collapse collapse " id="collapse${count}" data-bs-parent="#accordionExample">
+                                    <div class="accordion-collapse collapse " id="collapse${count}" data-bs-parent="#accordionExample2">
                                         <div class="accordion-body">
-                                            <strong>내용에 나오는 강조 타이틀</strong>
-                                            서술내용을 삽입한다.
+                                            <p>${faqData[count].strong}</p>
+                                            ${faqData[count].view}
                                         </div>
                                     </div>
                         </div>`
                 
             }             
-            $("#accordionExample").html(faqlist); 
+            $("#accordionExample2").html(faqlist); 
         </script>
     </body>
 </html>
