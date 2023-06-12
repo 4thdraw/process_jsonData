@@ -192,23 +192,26 @@
                            
                             ];
             let faqlist = '';
-            for(count in faqData){
-                faqlist +=`<div class="accordion-item">
-                                    <h3 class="accordion-header" >
-                                       <button class="accordion-button collapsed" type="button" 
-                                         data-bs-target="#collapse${count}" data-bs-toggle="collapse" 
-                                         >${faqData[count].title}</button>
-                                    </h3>
-                                    <div class="accordion-collapse collapse " id="collapse${count}" data-bs-parent="#accordionExample2">
-                                        <div class="accordion-body">
-                                            <p>${faqData[count].strong}</p>
-                                            ${faqData[count].view}
-                                        </div>
-                                    </div>
-                        </div>`
+            for(count in faqData){ //2번실행됨 count 0, 1
                 
+                for( j in faqData[count].ex){                
+                    faqlist +=`<div class="accordion-item">
+                                        <h3 class="accordion-header" >
+                                        <button class="accordion-button collapsed" type="button" 
+                                            data-bs-target="#collapse${count}_${j}" data-bs-toggle="collapse" 
+                                            >${faqData[count].ex[j].title}</button>
+                                        </h3>
+                                        <div class="accordion-collapse collapse " id="collapse${count}_${j}" data-bs-parent="${faqData[count].target}">
+                                            <div class="accordion-body">
+                                                <p>${faqData[count].ex[j].strong}</p>
+                                                ${faqData[count].ex[j].view}
+                                            </div>
+                                        </div>
+                            </div>`;
+                }
+                $(`${faqData[count].target}`).html(faqlist); // 딱 2번
             }             
-            $("#accordionExample2").html(faqlist); 
+            
         </script>
     </body>
 </html>
