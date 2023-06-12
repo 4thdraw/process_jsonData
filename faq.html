@@ -149,6 +149,9 @@
 			  crossorigin="anonymous"></script>
         <script>
             const faqData =  [
+                {
+                    target : "#accordionExample",
+                    ex : [ 
                             {
                                 title : "제목입니다.",
                                 strong : "내용안의 첫 타이틀로 강조글입니다.",
@@ -164,6 +167,29 @@
                                 strong : "3내용안의 첫 타이틀로 강조글입니다.",
                                 view : "3강조글 아래 일반 설명문구나열됩니다."
                              }
+                            ]
+                },{
+                    target : "#accordionExample2",
+                    ex : [ 
+                            {
+                                title : "아래섹션의 제목입니다.",
+                                strong : "내용안의 첫 타이틀로 강조글입니다.",
+                                view : "강조글 아래 일반 설명문구나열됩니다."
+                             },
+                             {
+                                title : "아래섹션의 2제목입니다.",
+                                strong : "2내용안의 첫 타이틀로 강조글입니다.",
+                                view : "2강조글 아래 일반 설명문구나열됩니다."
+                             },
+                             {
+                                title : "아래섹션의 3제목입니다.",
+                                strong : "3내용안의 첫 타이틀로 강조글입니다.",
+                                view : "3강조글 아래 일반 설명문구나열됩니다."
+                             }
+                            ]
+
+                }
+                           
                             ];
             let faqlist = '';
             for(count in faqData){
